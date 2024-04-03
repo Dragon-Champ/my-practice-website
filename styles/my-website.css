@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  background: linear-gradient(30deg,rgb(250, 54, 54), rgb(255, 51, 252), rgb(57, 43, 249));
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+@keyframes slide-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.background {
+  transition: opacity 0.5s 0.1s;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  position: absolute;
+  z-index: 10;
+  white-space: nowrap;
+  overflow: hidden;
+  row-gap: 20px;
+}
+
+.sliding-div-container {
+  height: 146px;
+  white-space: nowrap;
+}
+.sliding-div-1,
+.sliding-div-2,
+.sliding-div-3,
+.sliding-div-4 {
+  height: 100%;
+  display: inline-block; 
+}
+.sliding-div-1 {
+  animation: 35s slide-animation infinite linear reverse;
+}
+.sliding-div-2 {
+  animation: 33s slide-animation infinite linear;
+}
+.sliding-div-3 {
+  animation: 30s slide-animation infinite linear reverse;
+}
+.sliding-div-4 {
+  animation: 32s slide-animation infinite linear;
+}
+img {
+  height: 100%;
+}
+
+
+#menu {
+  opacity: 1;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(255, 65, 65);
+  position: fixed;
+  z-index: 100;
+  left: 47%;
+  bottom: 50%;
+  transition: height 0.2s,width 0.2s;
+}
+
+#menu:active {
+  height: 4.7rem;
+  width: 4.7rem;
+}
+
+li {
+  height: 4.4rem;
+  width: 4.4rem;
+  border-radius: 50%;
+  background-color: rgb(39, 39, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  color: aliceblue;
+  position: absolute;
+  left: 47.1%;
+  bottom: 50.5%;
+  z-index: 90;
+  /*rotate: 90deg;
+  transform-origin: 37px;
+  translate: -100px;*/
+  cursor: pointer;
+  transition: translate 1s, rotate 0s 1.1s,transform-origin 1s,background-color 10s;
+}
+
+nav li:hover {
+  background-color: aliceblue;
+  color: rgb(39, 39, 255);
+  
+}
+
+.nav-menu.active li {
+  transition: translate 1s, transform-origin 1s;
+  
+}
+
+li div {
+  display: inline-block;
+  
+}
